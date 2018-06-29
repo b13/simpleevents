@@ -1,0 +1,18 @@
+{
+	"name": "cmsexperts/simpleevents",
+	"type": "typo3-cms-extension",
+	"description": "Add events in a simple way",
+	"license": "GPL-2.0-or-later",
+	"keywords": ["TYPO3 CMS", "Events"],
+	"require": {
+		"typo3/cms-core": "^8.7 || ^9.0"
+	},
+	"replace": {
+		"simpleevents": "self.version"
+	},
+	"autoload": {
+		"psr-4": {
+			"CMSExperts\\Simpleevents\\": "Classes"
+		}
+	}
+}

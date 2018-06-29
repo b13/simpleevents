@@ -1,0 +1,14 @@
+plugin.tx_simpleevents {
+    view {
+        # cat=plugin.tx_simpleevents/file; type=string; label=Path to template root (FE)
+        templateRootPath = EXT:simpleevents/Resources/Private/Templates/
+        # cat=plugin.tx_simpleevents/file; type=string; label=Path to template partials (FE)
+        partialRootPath = EXT:simpleevents/Resources/Private/Partials/
+        # cat=plugin.tx_simpleevents/file; type=string; label=Path to template layouts (FE)
+        layoutRootPath = EXT:simpleevents/Resources/Private/Layouts/
+    }
+    persistence {
+        # cat=plugin.tx_simpleevents//a; type=string; label=Sysfolder with all items
+        storagePid = 25
+    }
+}

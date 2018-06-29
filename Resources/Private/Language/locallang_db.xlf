@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+    <file source-language="de" datatype="plaintext" original="messages" date="2017-02-10T10:52:33Z">
+        <header>
+            <description>Langauge Labels for Simple events DB fields</description>
+            <authorName>b13</authorName>
+            <authorEmail>typo3@b13.de</authorEmail>
+        </header>
+        <body>
+            <trans-unit id="event">
+                <source>Veranstaltung</source>
+            </trans-unit>
+            <trans-unit id="event.title">
+                <source>Titel</source>
+            </trans-unit>
+            <trans-unit id="event.description">
+                <source>Beschreibung</source>
+            </trans-unit>
+            <trans-unit id="event.eventstart">
+                <source>Veranstaltungsbeginn</source>
+            </trans-unit>
+            <trans-unit id="event.eventend">
+                <source>Veranstaltungs-Ende (Optional)</source>
+            </trans-unit>
+            <trans-unit id="event.location">
+                <source>Veranstaltungs-Ort</source>
+            </trans-unit>
+            <trans-unit id="event.audience">
+                <source>Zielgruppe (z.B. "Für Ärzte")</source>
+            </trans-unit>
+            <trans-unit id="event.url">
+                <source>Weiterführende Informationen (Link zur Website)</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

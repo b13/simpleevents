@@ -1,0 +1,29 @@
+<div class="b_events__row">
+	<div class="b_events__date-container">
+		<f:if condition="{event.eventend}">
+			<f:then>
+				<p class="b_events__date">
+					<f:format.date format="d.m.">{event.eventstart}</f:format.date>
+				</p>
+				<p class="b_events__date"> - </p>
+				<p class="b_events__date">
+					<f:format.date format="d.m.">{event.eventend}</f:format.date>
+				</p>
+			</f:then>
+			<f:else>
+				<p class="b_events__date">
+					<f:format.date format="d.m.">{event.eventstart}</f:format.date>
+				</p>
+			</f:else>
+		</f:if>
+	</div>
+
+	<div class="b_events__event-container">
+		<p class="b_events__title">{event.title}</p>
+		<f:if condition="{event.location}">
+			<p class="b_events__location">{event.location}</p>
+		</f:if>
+	</div>
+</div>
+
+

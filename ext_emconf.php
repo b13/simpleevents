@@ -1,7 +1,7 @@
 <?php
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Events',
-    'description' => 'Simple events listing.',
+    'description' => 'Simple events listing with Extbase and Fluid',
     'category' => 'fe',
     'author' => 'b13',
     'author_email' => '',

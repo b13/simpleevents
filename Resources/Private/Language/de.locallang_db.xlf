@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2017-02-10T10:52:33Z">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-02-10T10:52:33Z">
         <header>
             <description>Language Labels for simple events DB fields</description>
             <authorName>b13</authorName>
@@ -9,35 +9,35 @@
         <body>
             <trans-unit id="event">
                 <source>event</source>
-                <target>event</target>
+                <source>Veranstaltung</source>
             </trans-unit>
             <trans-unit id="event.title">
                 <source>Title</source>
-                <target>Title</target>
+                <source>Titel</source>
             </trans-unit>
             <trans-unit id="event.description">
                 <source>Description</source>
-                <target>Description</target>a
+                <source>Beschreibung</source>
             </trans-unit>
             <trans-unit id="event.eventstart">
                 <source>Begin</source>
-                <target>Begin</target>
+                <source>Veranstaltungsbeginn</source>
             </trans-unit>
             <trans-unit id="event.eventend">
                 <source>End (optional)</source>
-                <target>End (optional)</target>
+                <source>Veranstaltungs-Ende (Optional)</source>
             </trans-unit>
             <trans-unit id="event.location">
                 <source>Location</source>
-                <target>Location</target>
+                <source>Veranstaltungs-Ort</source>
             </trans-unit>
             <trans-unit id="event.audience">
                 <source>Target audience</source>
-                <target>Target audience</target>
+                <source>Zielgruppe</source>
             </trans-unit>
             <trans-unit id="event.url">
                 <source>Link</source>
-                <target>Link</target>
+                <source>Weiterführende Informationen (Link zur Website)</source>
             </trans-unit>
         </body>
     </file>

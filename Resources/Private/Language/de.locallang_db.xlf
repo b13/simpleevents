@@ -8,7 +8,7 @@
         </header>
         <body>
             <trans-unit id="event">
-                <source>event</source>
+                <source>Event</source>
                 <source>Veranstaltung</source>
             </trans-unit>
             <trans-unit id="event.title">

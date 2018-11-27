@@ -9,35 +9,35 @@
         <body>
             <trans-unit id="event">
                 <source>Event</source>
-                <source>Veranstaltung</source>
+                <target>Veranstaltung</target>
             </trans-unit>
             <trans-unit id="event.title">
                 <source>Title</source>
-                <source>Titel</source>
+                <target>Titel</target>
             </trans-unit>
             <trans-unit id="event.description">
                 <source>Description</source>
-                <source>Beschreibung</source>
+                <target>Beschreibung</target>
             </trans-unit>
             <trans-unit id="event.eventstart">
                 <source>Begin</source>
-                <source>Veranstaltungsbeginn</source>
+                <target>Veranstaltungsbeginn</target>
             </trans-unit>
             <trans-unit id="event.eventend">
                 <source>End (optional)</source>
-                <source>Veranstaltungs-Ende (Optional)</source>
+                <target>Veranstaltungs-Ende (Optional)</target>
             </trans-unit>
             <trans-unit id="event.location">
                 <source>Location</source>
-                <source>Veranstaltungs-Ort</source>
+                <target>Veranstaltungs-Ort</target>
             </trans-unit>
             <trans-unit id="event.audience">
                 <source>Target audience</source>
-                <source>Zielgruppe</source>
+                <target>Zielgruppe</target>
             </trans-unit>
             <trans-unit id="event.url">
                 <source>Link</source>
-                <source>Weiterführende Informationen (Link zur Website)</source>
+                <target>Weiterführende Informationen (Link zur Website)</target>
             </trans-unit>
             <trans-unit id="plugin.list">
                 <source>Simple events: List all events</source>

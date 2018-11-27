@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-    <file source-language="en" datatype="plaintext" original="messages" date="2017-02-10T10:52:33Z">
+    <file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2017-02-10T10:52:33Z">
         <header>
             <description>Language Labels for simple events DB fields</description>
             <authorName>b13</authorName>
@@ -9,43 +9,43 @@
         <body>
             <trans-unit id="event">
                 <source>Event</source>
-                <target>Event</target>
+                <target>Veranstaltung</target>
             </trans-unit>
             <trans-unit id="event.title">
                 <source>Title</source>
-                <target>Title</target>
+                <target>Titel</target>
             </trans-unit>
             <trans-unit id="event.description">
                 <source>Description</source>
-                <target>Description</target>a
+                <target>Beschreibung</target>
             </trans-unit>
             <trans-unit id="event.eventstart">
                 <source>Begin</source>
-                <target>Begin</target>
+                <target>Veranstaltungsbeginn</target>
             </trans-unit>
             <trans-unit id="event.eventend">
                 <source>End (optional)</source>
-                <target>End (optional)</target>
+                <target>Veranstaltungs-Ende (Optional)</target>
             </trans-unit>
             <trans-unit id="event.location">
                 <source>Location</source>
-                <target>Location</target>
+                <target>Veranstaltungs-Ort</target>
             </trans-unit>
             <trans-unit id="event.audience">
                 <source>Target audience</source>
-                <target>Target audience</target>
+                <target>Zielgruppe</target>
             </trans-unit>
             <trans-unit id="event.url">
                 <source>Link</source>
-                <target>Link</target>
+                <target>Weiterführende Informationen (Link zur Website)</target>
             </trans-unit>
             <trans-unit id="plugin.list">
                 <source>Simple events: List all events</source>
-                <target>Simple events: List all events</target>
+                <target>Simple events: Liste aller Veranstaltungen</target>
             </trans-unit>
             <trans-unit id="plugin.upcoming">
                 <source>Simple events: Show upcoming events</source>
-                <target>Simple events: Show upcoming events</target>
+                <target>Simple events: Nächste Veranstaltungen</target>
             </trans-unit>
         </body>
     </file>

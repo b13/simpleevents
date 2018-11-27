@@ -39,6 +39,14 @@
                 <source>Link</source>
                 <source>Weiterführende Informationen (Link zur Website)</source>
             </trans-unit>
+            <trans-unit id="plugin.list">
+                <source>Simple events: List all events</source>
+                <target>Simple events: Liste aller Veranstaltungen</target>
+            </trans-unit>
+            <trans-unit id="plugin.upcoming">
+                <source>Simple events: Show upcoming events</source>
+                <target>Simple events: Nächste Veranstaltungen</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

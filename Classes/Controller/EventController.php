@@ -14,6 +14,7 @@ namespace CMSExperts\Simpleevents\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
+use CMSExperts\Simpleevents\Domain\Repository\EventRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -23,10 +24,17 @@ class EventController extends ActionController
 {
 
     /**
-     * @var \CMSExperts\Simpleevents\Domain\Repository\EventRepository
-     * @inject
+     * @var EventRepository
      */
     protected $eventRepository;
+
+    /**
+     * @param EventRepository $eventRepository
+     */
+    public function injectEventRepository(EventRepository $eventRepository)
+    {
+        $this->eventRepository = $eventRepository;
+    }
 
     /**
      * Show the next upcoming events

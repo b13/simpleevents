@@ -13,6 +13,8 @@ namespace CMSExperts\Simpleevents\Domain\Model;
  *
  * The TYPO3 project - inspiring people to share!
  */
+
+use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -79,7 +81,10 @@ class Event extends AbstractEntity
      */
     public function getCategories()
     {
-        if ($GLOBALS['TSFE']->sys_language_content) {
+        $context = GeneralUtility::makeInstance(Context::class);
+        $languageId = $context->getPropertyFromAspect('id','language');
+        
+        if ($languageId > 0) {
             $uid = $this->uid;
 
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)

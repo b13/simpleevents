@@ -1,7 +1,6 @@
 plugin.tx_simpleevents {
     settings {
         upcomingLimit = 3
-        page.list = 37
     }
     view {
         templateRootPaths.10 = {$plugin.tx_simpleevents.view.templateRootPath}

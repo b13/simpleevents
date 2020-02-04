@@ -1,5 +1,5 @@
 <?php
-namespace CMSExperts\Simpleevents\Controller;
+namespace B13\Simpleevents\Controller;
 
 /*
  * This file is part of the TYPO3 CMS project.
@@ -14,7 +14,7 @@ namespace CMSExperts\Simpleevents\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
-use CMSExperts\Simpleevents\Domain\Repository\EventRepository;
+use B13\Simpleevents\Domain\Repository\EventRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**

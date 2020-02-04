@@ -4,7 +4,7 @@
         <header>
             <description>Language Labels for simple events DB fields</description>
             <authorName>b13</authorName>
-            <authorEmail>typo3@b13.de</authorEmail>
+            <authorEmail>typo3@b13.com</authorEmail>
         </header>
         <body>
             <trans-unit id="event">

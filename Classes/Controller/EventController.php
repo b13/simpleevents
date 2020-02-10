@@ -38,6 +38,7 @@ class EventController extends ActionController
 
     /**
      * Show the next upcoming events
+     * amount set by TypoScript setting 'upcomingLimit'
      */
     public function upcomingAction()
     {
@@ -48,36 +49,12 @@ class EventController extends ActionController
 
     /**
      * List all upcoming events
-     *
-     * @param string $startdate
-     * @param int $monthFilter
      */
-    public function listAction($startdate = null, $monthFilter = null)
+    public function listAction()
     {
         $events = $this->eventRepository->findUpcoming();
-        $monthlyEvents = [];
-        foreach ($events as $event) {
-            $eventStart = $event->getEventstart()->format('Ym');
-            if ($monthFilter) {
-                if ((int)$event->getEventstart()->format('n') === (int)$monthFilter) {
-                    $monthlyEvents[$eventStart][] = $event;
-                }
-            } else {
-                $monthlyEvents[$eventStart][] = $event;
-            }
-        }
 
-        ksort($monthlyEvents);
-        $allMonthlyEvents = $monthlyEvents;
-        foreach ($monthlyEvents as $eventStart => $v) {
-            if ($startdate !== null && $eventStart < $startdate) {
-                unset($monthlyEvents[$k]);
-            }
-        }
         $this->view->assign('events', $events);
-        $this->view->assign('allMonthlyEvents', $allMonthlyEvents);
-        $this->view->assign('monthlyEvents', $monthlyEvents);
-        $this->view->assign('monthFilter', $monthFilter);
         $this->view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
     }
 }

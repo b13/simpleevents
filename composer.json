@@ -12,7 +12,12 @@
 	},
 	"autoload": {
 		"psr-4": {
-			"CMSExperts\\Simpleevents\\": "Classes"
+			"B13\\Simpleevents\\": "Classes"
+		}
+	},
+	"extra": {
+		"typo3/cms": {
+			"extension-key": "simpleevents"
 		}
 	}
 }

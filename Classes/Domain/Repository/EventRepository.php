@@ -1,5 +1,5 @@
 <?php
-namespace CMSExperts\Simpleevents\Domain\Repository;
+namespace B13\Simpleevents\Domain\Repository;
 
 /*
  * This file is part of the TYPO3 CMS project.

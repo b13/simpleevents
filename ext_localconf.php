@@ -2,7 +2,7 @@
 defined('TYPO3_MODE') or die();
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'CMSExperts.Simpleevents',
+    'B13.Simpleevents',
     'upcoming',
     [
         'Event' => 'upcoming'
@@ -10,7 +10,7 @@ defined('TYPO3_MODE') or die();
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'CMSExperts.Simpleevents',
+    'B13.Simpleevents',
     'list',
     [
         'Event' => 'list'

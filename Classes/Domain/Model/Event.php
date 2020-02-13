@@ -82,7 +82,7 @@ class Event extends AbstractEntity
     public function getCategories()
     {
         $context = GeneralUtility::makeInstance(Context::class);
-        $languageId = $context->getPropertyFromAspect('id','language');
+        $languageId = $context->getPropertyFromAspect('language', 'id');
         
         if ($languageId > 0) {
             $uid = $this->uid;

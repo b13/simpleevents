@@ -17,7 +17,7 @@ return [
         'enablecolumns'            => [
             'disabled' => 'hidden',
         ],
-        'iconfile'                 => 'EXT:simpleevents/ext_icon.png',
+        'iconfile'                 => 'EXT:simpleevents/Resources/Public/Icons/Extension.svg',
         'searchFields'             => 'title,description,location,audience,url'
     ],
     'interface' => [

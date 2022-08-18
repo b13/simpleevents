@@ -20,31 +20,17 @@ return [
         'iconfile'                 => 'EXT:simpleevents/Resources/Public/Icons/Extension.svg',
         'searchFields'             => 'title,description,location,audience,url'
     ],
-    'interface' => [
-        'showRecordFieldList' => 'title,description,location,audience,eventstart,eventend,url'
-    ],
     'columns'   => [
         'sys_language_uid' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.language',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'special' => 'languages',
-                'items' => [
-                    [
-                        'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
-                        -1,
-                        'flags-multiple'
-                    ],
-                ],
-                'default' => 0,
+                'type' => 'language'
             ]
         ],
         'l10n_parent' => [
-            'exclude' => true,
             'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:lang/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -134,7 +120,7 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'title,categories,--palette--;;dates,description,audience,location,--palette--;;language,'
+            'showitem' => 'title,categories,--palette--;;dates,description,audience,location,--palette--;;language'
         ],
     ],
     'palettes' => [

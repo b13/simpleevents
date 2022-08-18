@@ -7,13 +7,11 @@ $EM_CONF[$_EXTKEY] = [
     'author_email' => '',
     'author_company' => '',
     'state' => 'stable',
-    'uploadfolder' => 0,
-    'createDirs' => '',
-    'clearCacheOnLoad' => 1,
-    'version' => '2.0.2',
+    'clearCacheOnLoad' => true,
+    'version' => '3.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '9.0.0-10.9.99'
+            'typo3' => '10.4.0-11.9.99'
         ],
         'conflicts' => [],
         'suggests' => [],

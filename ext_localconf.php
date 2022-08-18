@@ -1,21 +1,21 @@
 <?php
-defined('TYPO3_MODE') or die();
+defined('TYPO3') or die();
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'B13.Simpleevents',
+    'Simpleevents',
     'upcoming',
     [
-        'Event' => 'upcoming'
+        \B13\Simpleevents\Controller\EventController::class => 'upcoming'
     ]
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
-    'B13.Simpleevents',
+    'Simpleevents',
     'list',
     [
-        'Event' => 'list'
+        \B13\Simpleevents\Controller\EventController::class => 'list'
     ],
     [
-        'Event' => 'list'
+        \B13\Simpleevents\Controller\EventController::class => 'list'
     ]
 );

@@ -14,8 +14,5 @@ defined('TYPO3') or die();
     'list',
     [
         \B13\Simpleevents\Controller\EventController::class => 'list'
-    ],
-    [
-        \B13\Simpleevents\Controller\EventController::class => 'list'
     ]
 );

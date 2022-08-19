@@ -1,4 +1,5 @@
 <?php
+
 $EM_CONF[$_EXTKEY] = [
     'title' => 'Events',
     'description' => 'Simple events listing with Extbase and Fluid',
@@ -11,7 +12,7 @@ $EM_CONF[$_EXTKEY] = [
     'version' => '3.0.0',
     'constraints' => [
         'depends' => [
-            'typo3' => '10.4.0-11.9.99'
+            'typo3' => '10.4.0-11.9.99',
         ],
         'conflicts' => [],
         'suggests' => [],

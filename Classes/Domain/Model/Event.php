@@ -17,7 +17,6 @@ use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
-
 /**
  * Class Event, representing a single event
  */
@@ -81,7 +80,7 @@ class Event extends AbstractEntity
     {
         $context = GeneralUtility::makeInstance(Context::class);
         $languageId = $context->getPropertyFromAspect('language', 'id');
-        
+
         if ($languageId > 0) {
             $uid = $this->uid;
 
@@ -114,9 +113,8 @@ class Event extends AbstractEntity
                     )
                 )->execute()->fetchAll();
             return reset($categories);
-        } else {
-            return $this->categories;
         }
+        return $this->categories;
     }
 
     /**

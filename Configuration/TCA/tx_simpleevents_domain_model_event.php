@@ -18,15 +18,15 @@ return [
             'disabled' => 'hidden',
         ],
         'iconfile'                 => 'EXT:simpleevents/Resources/Public/Icons/Extension.svg',
-        'searchFields'             => 'title,description,location,audience,url'
+        'searchFields'             => 'title,description,location,audience,url',
     ],
     'columns'   => [
         'sys_language_uid' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
             'config' => [
-                'type' => 'language'
-            ]
+                'type' => 'language',
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -37,19 +37,19 @@ return [
                 'items' => [
                     [
                         '',
-                        0
-                    ]
+                        0,
+                    ],
                 ],
                 'foreign_table' => 'tx_simpleevents_domain_model_event',
                 'foreign_table_where' => 'AND tx_simpleevents_domain_model_event.sys_language_uid IN (-1,0)',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
 
         'l10n_diffsource'  => [
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'title'            => [
             'exclude' => true,
@@ -57,8 +57,8 @@ return [
             'config'  => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'description'      => [
             'exclude' => true,
@@ -67,8 +67,8 @@ return [
                 'type' => 'text',
                 'cols' => 30,
                 'enableRichtext' => true,
-                'richtextConfiguration' => 'default'
-            ]
+                'richtextConfiguration' => 'default',
+            ],
         ],
         'location'         => [
             'exclude' => true,
@@ -76,8 +76,8 @@ return [
             'config'  => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'audience'         => [
             'exclude' => true,
@@ -85,8 +85,8 @@ return [
             'config'  => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'url'              => [
             'exclude' => true,
@@ -94,8 +94,8 @@ return [
             'config'  => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'eventstart'       => [
             'exclude' => true,
@@ -104,8 +104,8 @@ return [
                 'type'       => 'input',
                 'renderType' => 'inputDateTime',
                 'size'       => 10,
-                'eval'       => 'date,required'
-            ]
+                'eval'       => 'date,required',
+            ],
         ],
         'eventend'         => [
             'exclude' => true,
@@ -114,13 +114,13 @@ return [
                 'type'       => 'input',
                 'renderType' => 'inputDateTime',
                 'size'       => 10,
-                'eval'       => 'date'
-            ]
+                'eval'       => 'date',
+            ],
         ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'title,categories,--palette--;;dates,description,audience,location,--palette--;;language'
+            'showitem' => 'title,categories,--palette--;;dates,description,audience,location,--palette--;;language',
         ],
     ],
     'palettes' => [
@@ -132,5 +132,5 @@ return [
                 sys_language_uid;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:sys_language_uid_formlabel,l10n_parent
             ',
         ],
-    ]
+    ],
 ];

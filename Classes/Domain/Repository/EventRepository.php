@@ -20,7 +20,6 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  */
 class EventRepository extends Repository
 {
-
     /**
      * Fetches the next items
      * @param int $limit

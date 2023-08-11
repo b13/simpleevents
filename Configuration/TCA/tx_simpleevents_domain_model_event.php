@@ -97,24 +97,41 @@ return [
                 'eval' => 'trim',
             ],
         ],
+        'categories' => [
+            'config' => [
+                'type' => 'select',
+                'renderType' => 'selectSingle',
+                'items' => [
+                    ['label' => 'Standard', 'value' => 0],
+                ],
+                'foreign_table' => 'sys_category',
+            ],
+        ],
         'eventstart'       => [
             'exclude' => true,
             'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventstart',
-            'config'  => [
+            'config' => (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12 ? [
                 'type'       => 'input',
                 'renderType' => 'inputDateTime',
                 'size'       => 10,
                 'eval'       => 'date,required',
+            ] : [
+                'type' => 'datetime',
+                'format' => 'date',
+                'eval' => 'required'
             ],
         ],
         'eventend'         => [
             'exclude' => true,
             'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventend',
-            'config'  => [
+            'config' => (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12 ? [
                 'type'       => 'input',
                 'renderType' => 'inputDateTime',
                 'size'       => 10,
                 'eval'       => 'date',
+            ] : [
+                'type' => 'datetime',
+                'format' => 'date',
             ],
         ],
     ],

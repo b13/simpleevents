@@ -13,6 +13,7 @@ namespace B13\Simpleevents\Controller;
  */
 
 use B13\Simpleevents\Domain\Repository\EventRepository;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
@@ -21,45 +22,37 @@ use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
  */
 class EventController extends ActionController
 {
-    /**
-     * @var EventRepository
-     */
-    protected $eventRepository;
-
-    /**
-     * @param EventRepository $eventRepository
-     */
-    public function injectEventRepository(EventRepository $eventRepository)
-    {
-        $this->eventRepository = $eventRepository;
-    }
+    public function __construct(protected EventRepository $eventRepository)
+    {}
 
     /**
      * Show the next upcoming events
      * amount set by TypoScript setting 'upcomingLimit'
      */
-    public function upcomingAction()
+    public function upcomingAction(): ResponseInterface
     {
         $events = $this->eventRepository->findUpcoming($this->settings['upcomingLimit']);
+        /** @var TypoScriptFrontendController $frontendController */
+        $frontendController = $this->request->getAttribute('frontend.controller');
         $this->view->assign('events', $events);
         $this->view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
-        $this->getFrontendController()->addCacheTags(['tx_simpleevents_domain_model_event']);
+        $frontendController->addCacheTags(['tx_simpleevents_domain_model_event']);
+        return $this->htmlResponse();
     }
 
     /**
      * List all upcoming events
      */
-    public function listAction()
+    public function listAction(): ResponseInterface
     {
         $events = $this->eventRepository->findUpcoming();
+        /** @var TypoScriptFrontendController $frontendController */
+        $frontendController = $this->request->getAttribute('frontend.controller');
 
         $this->view->assign('events', $events);
         $this->view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
-        $this->getFrontendController()->addCacheTags(['tx_simpleevents_domain_model_event']);
+        $frontendController->addCacheTags(['tx_simpleevents_domain_model_event']);
+        return $this->htmlResponse();
     }
 
-    protected function getFrontendController(): TypoScriptFrontendController
-    {
-        return $GLOBALS['TSFE'];
-    }
 }

@@ -14,6 +14,7 @@ namespace B13\Simpleevents\Domain\Model;
 
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -87,7 +88,7 @@ class Event extends AbstractEntity
             $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
                 ->getQueryBuilderForTable('sys_category');
 
-            $categories = $queryBuilder->select('sys_category.*')
+            $stm = $queryBuilder->select('sys_category.*')
                 ->from('sys_category')
                 ->join(
                     'sys_category',
@@ -111,7 +112,12 @@ class Event extends AbstractEntity
                         'sys_category_record_mm.fieldname',
                         $queryBuilder->createNamedParameter('categories', \PDO::PARAM_STR)
                     )
-                )->execute()->fetchAll();
+                );
+            if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 12) {
+                $categories = $stm->execute()->fetchAllAssociative();
+            } else {
+                $categories = $stm->executeQuery()->fetchAllAssociative();
+            }
             return reset($categories);
         }
         return $this->categories;

@@ -1,2 +1,0 @@
-# deprecated, use setup.typoscript
-@import 'EXT:simpleevents/Configuration/TypoScript/setup.typoscript'

@@ -1,13 +1,1 @@
-plugin.tx_simpleevents {
-    settings {
-        upcomingLimit = 3
-    }
-    view {
-        templateRootPaths.10 = {$plugin.tx_simpleevents.view.templateRootPath}
-        partialRootPaths.10 = {$plugin.tx_simpleevents.view.partialRootPath}
-        layoutRootPaths.10 = {$plugin.tx_simpleevents.view.layoutRootPath}
-    }
-    persistence {
-        storagePid = {$plugin.tx_simpleevents.persistence.storagePid}
-    }
-}
+@import 'EXT:simpleevents/Configuration/Sets/SimpleEvents/setup.typoscript'

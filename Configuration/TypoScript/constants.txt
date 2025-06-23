@@ -1,2 +1,0 @@
-# deprecated, use constants.typoscript
-@import 'EXT:simpleevents/Configuration/TypoScript/constants.typoscript'

@@ -12,9 +12,9 @@ namespace B13\Simpleevents\Domain\Model;
  * of the License, or any later version.
  */
 
+use Doctrine\DBAL\ParameterType;
 use TYPO3\CMS\Core\Context\Context;
 use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Information\Typo3Version;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -102,22 +102,19 @@ class Event extends AbstractEntity
                 ->where(
                     $queryBuilder->expr()->eq(
                         'sys_category_record_mm.uid_foreign',
-                        $queryBuilder->createNamedParameter($uid, \PDO::PARAM_INT)
+                        $queryBuilder->createNamedParameter($uid, ParameterType::INTEGER)
                     ),
                     $queryBuilder->expr()->eq(
                         'sys_category_record_mm.tablenames',
-                        $queryBuilder->createNamedParameter('tx_simpleevents_domain_model_event', \PDO::PARAM_STR)
+                        $queryBuilder->createNamedParameter('tx_simpleevents_domain_model_event')
                     ),
                     $queryBuilder->expr()->eq(
                         'sys_category_record_mm.fieldname',
-                        $queryBuilder->createNamedParameter('categories', \PDO::PARAM_STR)
+                        $queryBuilder->createNamedParameter('categories')
                     )
                 );
-            if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 12) {
-                $categories = $stm->execute()->fetchAllAssociative();
-            } else {
-                $categories = $stm->executeQuery()->fetchAllAssociative();
-            }
+
+            $categories = $stm->executeQuery()->fetchAllAssociative();
             return reset($categories);
         }
         return $this->categories;
@@ -134,7 +131,7 @@ class Event extends AbstractEntity
     /**
      * @param \DateTime $eventstart
      */
-    public function setEventstart($eventstart)
+    public function setEventstart($eventstart): void
     {
         $this->eventstart = $eventstart;
     }
@@ -150,7 +147,7 @@ class Event extends AbstractEntity
     /**
      * @param \DateTime $eventend
      */
-    public function setEventend($eventend)
+    public function setEventend($eventend): void
     {
         $this->eventend = $eventend;
     }
@@ -166,7 +163,7 @@ class Event extends AbstractEntity
     /**
      * @param string $title
      */
-    public function setTitle($title)
+    public function setTitle($title): void
     {
         $this->title = $title;
     }
@@ -182,7 +179,7 @@ class Event extends AbstractEntity
     /**
      * @param string $description
      */
-    public function setDescription($description)
+    public function setDescription($description): void
     {
         $this->description = $description;
     }
@@ -198,7 +195,7 @@ class Event extends AbstractEntity
     /**
      * @param string $audience
      */
-    public function setAudience($audience)
+    public function setAudience($audience): void
     {
         $this->audience = $audience;
     }
@@ -214,7 +211,7 @@ class Event extends AbstractEntity
     /**
      * @param string $url
      */
-    public function setUrl($url)
+    public function setUrl($url): void
     {
         $this->url = $url;
     }
@@ -230,7 +227,7 @@ class Event extends AbstractEntity
     /**
      * @param string $location
      */
-    public function setLocation($location)
+    public function setLocation($location): void
     {
         $this->location = $location;
     }

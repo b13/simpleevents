@@ -13,22 +13,21 @@ namespace B13\Simpleevents\Domain\Repository;
  */
 
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Class EventRepository to fetch events
+ * @extends Repository<\B13\Simpleevents\Domain\Model\Event>
  */
 class EventRepository extends Repository
 {
     /**
      * Fetches the next items
-     * @param int $limit
-     * @return array|\TYPO3\CMS\Extbase\Persistence\QueryResultInterface
      */
-    public function findUpcoming($limit = 0)
+    public function findUpcoming(int $limit = 0): QueryResultInterface
     {
         $query = $this->createQuery();
-        $limit = (int)$limit;
         if ($limit > 0) {
             $query->setLimit($limit);
         }

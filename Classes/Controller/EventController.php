@@ -14,7 +14,12 @@ namespace B13\Simpleevents\Controller;
 
 use B13\Simpleevents\Domain\Repository\EventRepository;
 use Psr\Http\Message\ResponseInterface;
+use TYPO3\CMS\Core\Cache\CacheDataCollector;
+use TYPO3\CMS\Core\Cache\CacheTag;
+use TYPO3\CMS\Core\Information\Typo3Version;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
@@ -31,12 +36,12 @@ class EventController extends ActionController
      */
     public function upcomingAction(): ResponseInterface
     {
-        $events = $this->eventRepository->findUpcoming($this->settings['upcomingLimit']);
-        /** @var TypoScriptFrontendController $frontendController */
-        $frontendController = $this->request->getAttribute('frontend.controller');
+        $events = $this->eventRepository->findUpcoming((int)($this->settings['upcomingLimit'] ?? 0));
         $this->view->assign('events', $events);
-        $this->view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
-        $frontendController->addCacheTags(['tx_simpleevents_domain_model_event']);
+        /** @var ContentObjectRenderer $contentObject */
+        $contentObject = $this->request->getAttribute('currentContentObject');
+        $this->view->assign('contentObjectData', $contentObject->data);
+        $this->addCacheTag();
         return $this->htmlResponse();
     }
 
@@ -46,13 +51,25 @@ class EventController extends ActionController
     public function listAction(): ResponseInterface
     {
         $events = $this->eventRepository->findUpcoming();
-        /** @var TypoScriptFrontendController $frontendController */
-        $frontendController = $this->request->getAttribute('frontend.controller');
-
         $this->view->assign('events', $events);
-        $this->view->assign('contentObjectData', $this->configurationManager->getContentObject()->data);
-        $frontendController->addCacheTags(['tx_simpleevents_domain_model_event']);
+        /** @var ContentObjectRenderer $contentObject */
+        $contentObject = $this->request->getAttribute('currentContentObject');
+        $this->view->assign('contentObjectData', $contentObject->data);
+        $this->addCacheTag();
         return $this->htmlResponse();
+    }
+
+    protected function addCacheTag(): void
+    {
+        if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 13) {
+            /** @var TypoScriptFrontendController $frontendController */
+            $frontendController = $this->request->getAttribute('frontend.controller');
+            $frontendController->addCacheTags(['tx_simpleevents_domain_model_event']);
+        } else {
+            /** @var CacheDataCollector $cacheDataCollector */
+            $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
+            $cacheDataCollector->addCacheTags(...array_map(fn (string $tag) => new CacheTag($tag), ['tx_simpleevents_domain_model_event']));
+        }
     }
 
 }

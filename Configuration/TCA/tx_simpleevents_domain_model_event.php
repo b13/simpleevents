@@ -8,7 +8,6 @@ return [
         'label_alt_force'          => true,
         'tstamp'                   => 'updatedon',
         'crdate'                   => 'createdon',
-        'cruser_id'                => 'createdby',
         'languageField'            => 'sys_language_uid',
         'transOrigPointerField'    => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
@@ -17,7 +16,9 @@ return [
         'enablecolumns'            => [
             'disabled' => 'hidden',
         ],
-        'iconfile'                 => 'EXT:simpleevents/Resources/Public/Icons/Extension.svg',
+        'typeicon_classes' => [
+            'default' => 'actions-calendar',
+        ],
         'searchFields'             => 'title,description,location,audience,url',
     ],
     'columns'   => [
@@ -34,12 +35,7 @@ return [
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
-                'items' => (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12 ? [
-                    [
-                        '',
-                        0,
-                    ],
-                ] : [
+                'items' => [
                     [
                         'label' => '',
                         'value' => 0,
@@ -103,6 +99,7 @@ return [
             ],
         ],
         'categories' => [
+            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.category',
             'config' => [
                 'type' => 'select',
                 'renderType' => 'selectSingle',
@@ -115,26 +112,16 @@ return [
         'eventstart'       => [
             'exclude' => true,
             'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventstart',
-            'config' => (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12 ? [
-                'type'       => 'input',
-                'renderType' => 'inputDateTime',
-                'size'       => 10,
-                'eval'       => 'date,required',
-            ] : [
+            'config' => [
                 'type' => 'datetime',
                 'format' => 'date',
-                'eval' => 'required'
+                'required' => true
             ],
         ],
         'eventend'         => [
             'exclude' => true,
             'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventend',
-            'config' => (\TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Information\Typo3Version::class))->getMajorVersion() < 12 ? [
-                'type'       => 'input',
-                'renderType' => 'inputDateTime',
-                'size'       => 10,
-                'eval'       => 'date',
-            ] : [
+            'config' => [
                 'type' => 'datetime',
                 'format' => 'date',
             ],
@@ -147,11 +134,11 @@ return [
     ],
     'palettes' => [
         'dates' => [
-            'showitem' => 'eventstart,eventend,sys_language_uid,l10n_parent',
+            'showitem' => 'eventstart,eventend',
         ],
         'language' => [
             'showitem' => '
-                sys_language_uid;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:sys_language_uid_formlabel,l10n_parent
+                sys_language_uid,l10n_parent
             ',
         ],
     ],

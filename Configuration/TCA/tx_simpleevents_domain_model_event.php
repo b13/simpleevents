@@ -22,36 +22,6 @@ return [
         'searchFields'             => 'title,description,location,audience,url',
     ],
     'columns'   => [
-        'sys_language_uid' => [
-            'exclude' => true,
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.language',
-            'config' => [
-                'type' => 'language',
-            ],
-        ],
-        'l10n_parent' => [
-            'displayCond' => 'FIELD:sys_language_uid:>:0',
-            'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.l18n_parent',
-            'config' => [
-                'type' => 'select',
-                'renderType' => 'selectSingle',
-                'items' => [
-                    [
-                        'label' => '',
-                        'value' => 0,
-                    ],
-                ],
-                'foreign_table' => 'tx_simpleevents_domain_model_event',
-                'foreign_table_where' => 'AND tx_simpleevents_domain_model_event.sys_language_uid IN (-1,0)',
-                'default' => 0,
-            ],
-        ],
-
-        'l10n_diffsource'  => [
-            'config' => [
-                'type' => 'passthrough',
-            ],
-        ],
         'title'            => [
             'exclude' => true,
             'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.title',

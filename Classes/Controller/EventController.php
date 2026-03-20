@@ -16,11 +16,8 @@ use B13\Simpleevents\Domain\Repository\EventRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Cache\CacheDataCollector;
 use TYPO3\CMS\Core\Cache\CacheTag;
-use TYPO3\CMS\Core\Information\Typo3Version;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
-use TYPO3\CMS\Frontend\Controller\TypoScriptFrontendController;
 
 /**
  * Main controller for rendering upcoming events
@@ -61,15 +58,9 @@ class EventController extends ActionController
 
     protected function addCacheTag(): void
     {
-        if (GeneralUtility::makeInstance(Typo3Version::class)->getMajorVersion() < 13) {
-            /** @var TypoScriptFrontendController $frontendController */
-            $frontendController = $this->request->getAttribute('frontend.controller');
-            $frontendController->addCacheTags(['tx_simpleevents_domain_model_event']);
-        } else {
-            /** @var CacheDataCollector $cacheDataCollector */
-            $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
-            $cacheDataCollector->addCacheTags(...array_map(fn (string $tag) => new CacheTag($tag), ['tx_simpleevents_domain_model_event']));
-        }
+        /** @var CacheDataCollector $cacheDataCollector */
+        $cacheDataCollector = $this->request->getAttribute('frontend.cache.collector');
+        $cacheDataCollector->addCacheTags(...array_map(fn (string $tag) => new CacheTag($tag), ['tx_simpleevents_domain_model_event']));
     }
 
 }

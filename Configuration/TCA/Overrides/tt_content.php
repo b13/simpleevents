@@ -17,3 +17,13 @@ ExtensionUtility::registerPlugin(
     'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.list',
     'actions-calendar'
 );
+
+$GLOBALS['TCA']['tt_content']['types']['simpleevents_upcoming']['showitem'] = '--palette--;;header,
+                --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
+                    --palette--;;frames,
+                    --palette--;;appearanceLinks,
+                    ,pages,recursive,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
+                    categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended';
+$GLOBALS['TCA']['tt_content']['types']['simpleevents_list']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['simpleevents_upcoming']['showitem'];

@@ -18,7 +18,7 @@ ExtensionUtility::registerPlugin(
     'actions-calendar'
 );
 
-$GLOBALS['TCA']['tt_content']['types']['simpleevents_upcoming']['showitem'] = '--palette--;;header,
+$GLOBALS['TCA']['tt_content']['types']['simpleevents_upcoming']['showitem'] = '--palette--;;headers,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,
                     --palette--;;appearanceLinks,

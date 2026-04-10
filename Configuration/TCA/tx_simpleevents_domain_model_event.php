@@ -19,7 +19,6 @@ return [
         'typeicon_classes' => [
             'default' => 'actions-calendar',
         ],
-        'searchFields'             => 'title,description,location,audience,url',
     ],
     'columns'   => [
         'title'            => [

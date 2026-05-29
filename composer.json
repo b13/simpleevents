@@ -1,11 +1,11 @@
 {
 	"name": "b13/simpleevents",
 	"type": "typo3-cms-extension",
-	"description": "Add events in a simple way",
+	"description": "Events - Add events in a simple way",
 	"license": "GPL-2.0-or-later",
 	"keywords": ["TYPO3 CMS", "Events"],
 	"require": {
-		"typo3/cms-core": "^13.4 || ^14.1"
+		"typo3/cms-core": "^13.4 || ^14.3"
 	},
 	"replace": {
 		"cmsexperts/simpleevents": "*"
@@ -17,7 +17,11 @@
 	},
 	"extra": {
 		"typo3/cms": {
-			"extension-key": "simpleevents"
+			"extension-key": "simpleevents",
+			"version": "6.0.1",
+			"Package": {
+				"providesPackages": {}
+			}
 		}
 	}
 }

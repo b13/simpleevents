@@ -18,6 +18,16 @@ ExtensionUtility::registerPlugin(
     'actions-calendar'
 );
 
+ExtensionUtility::registerPlugin(
+    'Simpleevents',
+    'selectedList',
+    'simpleevents.db:plugin.simpleevents_selectedlist.title',
+    'actions-calendar',
+    'plugins',
+    'simpleevents.db:plugin.simpleevents_selectedlist.description',
+    'FILE:EXT:simpleevents/Configuration/FlexForms/SimpleEventsSelectedList.xml'
+);
+
 $GLOBALS['TCA']['tt_content']['types']['simpleevents_upcoming']['showitem'] = '--palette--;;headers,
                 --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:tabs.appearance,
                     --palette--;;frames,

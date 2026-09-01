@@ -12,6 +12,7 @@ namespace B13\Simpleevents\Domain\Repository;
  * of the License, or any later version.
  */
 
+use B13\Simpleevents\Domain\Model\Event;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -48,5 +49,28 @@ class EventRepository extends Repository
             ['eventstart' => QueryInterface::ORDER_ASCENDING]
         );
         return $query->execute();
+    }
+
+    /**
+     * Fetches the given events in the order the editor selected them
+     *
+     * @param int[] $uids
+     * @return Event[]
+     */
+    public function findByUids(array $uids): array
+    {
+        $uids = array_values(array_unique(array_filter($uids)));
+        if ($uids === []) {
+            return [];
+        }
+        $query = $this->createQuery();
+        $query->getQuerySettings()->setRespectStoragePage(false);
+        $query->matching($query->in('uid', $uids));
+        $events = [];
+        foreach ($query->execute() as $event) {
+            /** @var Event $event */
+            $events[$event->getUid()] = $event;
+        }
+        return array_values(array_filter(array_map(static fn(int $uid): ?Event => $events[$uid] ?? null, $uids)));
     }
 }

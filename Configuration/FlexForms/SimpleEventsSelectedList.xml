@@ -1,0 +1,16 @@
+<T3DataStructure>
+    <ROOT>
+        <type>array</type>
+        <el>
+            <settings.selectedEvents>
+                <label>simpleevents.db:plugin.simpleevents_selectedlist.flexform.settings.selectedEvents</label>
+                <config>
+                    <type>group</type>
+                    <allowed>tx_simpleevents_domain_model_event</allowed>
+                    <size>3</size>
+                    <minitems>1</minitems>
+                </config>
+            </settings.selectedEvents>
+        </el>
+    </ROOT>
+</T3DataStructure>

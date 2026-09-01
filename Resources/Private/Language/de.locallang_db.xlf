@@ -47,6 +47,20 @@
                 <source>Simple events: Show upcoming events</source>
                 <target>Simple events: Nächste Veranstaltungen</target>
             </trans-unit>
+
+            <!-- Plugin 'simpleevents_selectedlist' -->
+            <trans-unit id="plugin.simpleevents_selectedlist.title">
+                <source>Simple events: Selected events</source>
+                <target>Simple events: Ausgewählte Veranstaltungen</target>
+            </trans-unit>
+            <trans-unit id="plugin.simpleevents_selectedlist.description">
+                <source>Display of selected events.</source>
+                <target>Darstellung von ausgewählten Veranstaltungen.</target>
+            </trans-unit>
+            <trans-unit id="plugin.simpleevents_selectedlist.flexform.settings.selectedEvents">
+                <source>Selected events</source>
+                <target>Ausgewählte Veranstaltungen</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

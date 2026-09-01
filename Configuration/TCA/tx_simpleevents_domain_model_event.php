@@ -1,67 +1,67 @@
 <?php
 
 return [
-    'ctrl'      => [
-        'title'                    => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event',
-        'label'                    => 'title',
-        'label_alt'                => 'eventstart,eventend',
-        'label_alt_force'          => true,
-        'tstamp'                   => 'updatedon',
-        'crdate'                   => 'createdon',
-        'languageField'            => 'sys_language_uid',
-        'transOrigPointerField'    => 'l10n_parent',
+    'ctrl' => [
+        'title' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event',
+        'label' => 'title',
+        'label_alt' => 'eventstart,eventend',
+        'label_alt_force' => true,
+        'tstamp' => 'updatedon',
+        'crdate' => 'createdon',
+        'languageField' => 'sys_language_uid',
+        'transOrigPointerField' => 'l10n_parent',
         'transOrigDiffSourceField' => 'l10n_diffsource',
-        'default_sortby'           => 'ORDER BY eventstart DESC',
-        'delete'                   => 'deleted',
-        'enablecolumns'            => [
+        'default_sortby' => 'ORDER BY eventstart DESC',
+        'delete' => 'deleted',
+        'enablecolumns' => [
             'disabled' => 'hidden',
         ],
         'typeicon_classes' => [
             'default' => 'actions-calendar',
         ],
     ],
-    'columns'   => [
-        'title'            => [
+    'columns' => [
+        'title' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.title',
-            'config'  => [
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.title',
+            'config' => [
                 'type' => 'input',
                 'size' => 50,
                 'eval' => 'trim',
             ],
         ],
-        'description'      => [
+        'description' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.description',
-            'config'  => [
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.description',
+            'config' => [
                 'type' => 'text',
                 'cols' => 30,
                 'enableRichtext' => true,
                 'richtextConfiguration' => 'default',
             ],
         ],
-        'location'         => [
+        'location' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.location',
-            'config'  => [
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.location',
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
             ],
         ],
-        'audience'         => [
+        'audience' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.audience',
-            'config'  => [
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.audience',
+            'config' => [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim',
             ],
         ],
-        'url'              => [
+        'url' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.url',
-            'config'  => [
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.url',
+            'config' => [
                 'type' => 'input',
                 'size' => 50,
                 'eval' => 'trim',
@@ -78,18 +78,18 @@ return [
                 'foreign_table' => 'sys_category',
             ],
         ],
-        'eventstart'       => [
+        'eventstart' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventstart',
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventstart',
             'config' => [
                 'type' => 'datetime',
                 'format' => 'date',
-                'required' => true
+                'required' => true,
             ],
         ],
-        'eventend'         => [
+        'eventend' => [
             'exclude' => true,
-            'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventend',
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.eventend',
             'config' => [
                 'type' => 'datetime',
                 'format' => 'date',

@@ -7,9 +7,14 @@
             <authorEmail>typo3@b13.com</authorEmail>
         </header>
         <body>
+            <!-- 'tt_content' -->
+            <trans-unit id="tt_content.group.simpleevents">
+                <source>Events</source>
+            </trans-unit>
+
+            <!-- 'tx_simpleevents_domain_model_event' -->
             <trans-unit id="event">
                 <source>Event</source>
-                <target>Event</target>
             </trans-unit>
             <trans-unit id="event.palettes.dates">
                 <source>Date</source>
@@ -20,41 +25,29 @@
             <trans-unit id="event.palettes.link">
                 <source>Link</source>
             </trans-unit>
-            <trans-unit id="event.title">
-                <source>Title</source>
-                <target>Title</target>
+            <trans-unit id="event.audience">
+                <source>Target audience</source>
             </trans-unit>
             <trans-unit id="event.description">
                 <source>Description</source>
-                <target>Description</target>a
-            </trans-unit>
-            <trans-unit id="event.eventstart">
-                <source>Begin</source>
-                <target>Begin</target>
             </trans-unit>
             <trans-unit id="event.eventend">
                 <source>End (optional)</source>
-                <target>End (optional)</target>
+            </trans-unit>
+            <trans-unit id="event.eventstart">
+                <source>Begin</source>
             </trans-unit>
             <trans-unit id="event.link_title">
                 <source>Link title</source>
             </trans-unit>
             <trans-unit id="event.location">
                 <source>Location</source>
-                <target>Location</target>
             </trans-unit>
-            <trans-unit id="event.audience">
-                <source>Target audience</source>
-                <target>Target audience</target>
+            <trans-unit id="event.title">
+                <source>Title</source>
             </trans-unit>
             <trans-unit id="event.url">
                 <source>Link</source>
-                <target>Link</target>
-            </trans-unit>
-
-            <!-- 'tt_content' -->
-            <trans-unit id="tt_content.group.simpleevents">
-                <source>Events</source>
             </trans-unit>
 
             <!-- Plugin 'simpleevents_list' -->

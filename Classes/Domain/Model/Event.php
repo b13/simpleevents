@@ -61,9 +61,8 @@ class Event extends AbstractEntity
 
     /**
      * the link title of the url
-     * @var string
      */
-    protected $linkTitle;
+    protected string $linkTitle = '';
 
     /**
      * the location of the event
@@ -222,18 +221,12 @@ class Event extends AbstractEntity
         $this->url = $url;
     }
 
-    /**
-     * @return string
-     */
-    public function getLinkTitle()
+    public function getLinkTitle(): string
     {
         return $this->linkTitle;
     }
 
-    /**
-     * @param string $linkTitle
-     */
-    public function setLinkTitle($linkTitle): void
+    public function setLinkTitle(string $linkTitle): void
     {
         $this->linkTitle = $linkTitle;
     }

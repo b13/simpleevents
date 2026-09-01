@@ -1,18 +1,22 @@
-<div class="b_events__row">
+<li class="b_events__row">
 	<div class="b_events__date-container">
 		<f:if condition="{event.eventend}">
 			<f:then>
 				<p class="b_events__date">
-					<f:format.date format="d.m.">{event.eventstart}</f:format.date>
-				</p>
-				<p class="b_events__date"> - </p>
-				<p class="b_events__date">
-					<f:format.date format="d.m.">{event.eventend}</f:format.date>
+					<time datetime="{f:format.date(date: event.eventstart, pattern: 'yyyy-MM-dd')}">
+						{f:format.date(date: event.eventstart, pattern: 'SHORTDATE')}
+					</time>
+					-
+					<time datetime="{f:format.date(date: event.eventend, pattern: 'yyyy-MM-dd')}">
+						{f:format.date(date: event.eventend, pattern: 'SHORTDATE')}
+					</time>
 				</p>
 			</f:then>
 			<f:else>
 				<p class="b_events__date">
-					<f:format.date format="d.m.">{event.eventstart}</f:format.date>
+					<time datetime="{f:format.date(date: event.eventstart, pattern: 'yyyy-MM-dd')}">
+						{f:format.date(date: event.eventstart, pattern: 'SHORTDATE')}
+					</time>
 				</p>
 			</f:else>
 		</f:if>
@@ -38,6 +42,6 @@
 			</p>
 		</f:if>
 	</div>
-</div>
+</li>
 
 

@@ -8,47 +8,47 @@ defined('TYPO3') or die();
     'tt_content',
     'CType',
     'simpleevents',
-    'simpleevents.db:tt_content.group.simpleevents',
+    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:tt_content.group.simpleevents',
     'after:plugins'
 );
 
 ExtensionUtility::registerPlugin(
     'Simpleevents',
     'upcoming',
-    'simpleevents.db:plugin.simpleevents_upcoming.title',
+    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.simpleevents_upcoming.title',
     'actions-calendar',
     'simpleevents',
-    'simpleevents.db:plugin.simpleevents_upcoming.description',
+    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.simpleevents_upcoming.description',
 );
 
 ExtensionUtility::registerPlugin(
     'Simpleevents',
     'list',
-    'simpleevents.db:plugin.simpleevents_list.title',
+    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.simpleevents_list.title',
     'actions-calendar',
     'simpleevents',
-    'simpleevents.db:plugin.simpleevents_list.description',
+    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.simpleevents_list.description',
 );
 
 ExtensionUtility::registerPlugin(
     'Simpleevents',
     'selectedList',
-    'simpleevents.db:plugin.simpleevents_selectedlist.title',
+    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.simpleevents_selectedlist.title',
     'actions-calendar',
     'simpleevents',
-    'simpleevents.db:plugin.simpleevents_selectedlist.description',
+    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.simpleevents_selectedlist.description',
     'FILE:EXT:simpleevents/Configuration/FlexForms/SimpleEventsSelectedList.xml'
 );
 
 $GLOBALS['TCA']['tt_content']['types']['simpleevents_upcoming']['showitem'] = '
         --palette--;;headers,
-    --div--;core.form.tabs:plugin,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:plugin,
         pages, recursive,
-    --div--;core.form.tabs:appearance,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:appearance,
         --palette--;;frames,
         --palette--;;appearanceLinks,
-    --div--;core.form.tabs:categories,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
         categories,
-    --div--;core.form.tabs:extended,
+    --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:extended,
 ';
 $GLOBALS['TCA']['tt_content']['types']['simpleevents_list']['showitem'] = $GLOBALS['TCA']['tt_content']['types']['simpleevents_upcoming']['showitem'];

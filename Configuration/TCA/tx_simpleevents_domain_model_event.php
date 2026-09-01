@@ -97,7 +97,7 @@ return [
         ],
         'link_title' => [
             'exclude' => true,
-            'label' => 'simpleevents.db:event.link_title',
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.link_title',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
@@ -113,20 +113,20 @@ return [
                     description,
                     --palette--;;details,
                     --palette--;;link,
-                --div--;core.form.tabs:language,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:language,
                     --palette--;;language,
-                --div--;core.form.tabs:categories,
+                --div--;LLL:EXT:core/Resources/Private/Language/Form/locallang_tabs.xlf:categories,
                     categories,
             ',
         ],
     ],
     'palettes' => [
         'dates' => [
-            'label' => 'simpleevents.db:event.palettes.dates',
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.palettes.dates',
             'showitem' => 'eventstart,eventend',
         ],
         'details' => [
-            'label' => 'simpleevents.db:event.palettes.details',
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.palettes.details',
             'showitem' => 'location, audience',
         ],
         'language' => [
@@ -135,7 +135,7 @@ return [
             ',
         ],
         'link' => [
-            'label' => 'simpleevents.db:event.palettes.link',
+            'label' => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.palettes.link',
             'showitem' => 'url, link_title',
         ],
     ],

@@ -3,7 +3,7 @@
         <type>array</type>
         <el>
             <settings.selectedEvents>
-                <label>simpleevents.db:plugin.simpleevents_selectedlist.flexform.settings.selectedEvents</label>
+                <label>LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.simpleevents_selectedlist.flexform.settings.selectedEvents</label>
                 <config>
                     <type>group</type>
                     <allowed>tx_simpleevents_domain_model_event</allowed>

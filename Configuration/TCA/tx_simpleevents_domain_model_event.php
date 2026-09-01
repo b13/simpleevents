@@ -95,10 +95,19 @@ return [
                 'format' => 'date',
             ],
         ],
+        'link_title' => [
+            'exclude' => true,
+            'label' => 'simpleevents.db:event.link_title',
+            'config' => [
+                'type' => 'input',
+                'size' => 30,
+                'max' => 255,
+            ],
+        ],
     ],
     'types' => [
         '0' => [
-            'showitem' => 'title,categories,--palette--;;dates,description,audience,location,--palette--;;language',
+            'showitem' => 'title,categories,--palette--;;dates,description,audience,location,--palette--;;link,--palette--;;language',
         ],
     ],
     'palettes' => [
@@ -109,6 +118,10 @@ return [
             'showitem' => '
                 sys_language_uid,l10n_parent
             ',
+        ],
+        'link' => [
+            'label' => 'simpleevents.db:event.palettes.link',
+            'showitem' => 'url, link_title',
         ],
     ],
 ];

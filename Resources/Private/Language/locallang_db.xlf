@@ -11,6 +11,9 @@
                 <source>Event</source>
                 <target>Event</target>
             </trans-unit>
+            <trans-unit id="event.palettes.link">
+                <source>Link</source>
+            </trans-unit>
             <trans-unit id="event.title">
                 <source>Title</source>
                 <target>Title</target>
@@ -26,6 +29,9 @@
             <trans-unit id="event.eventend">
                 <source>End (optional)</source>
                 <target>End (optional)</target>
+            </trans-unit>
+            <trans-unit id="event.link_title">
+                <source>Link title</source>
             </trans-unit>
             <trans-unit id="event.location">
                 <source>Location</source>

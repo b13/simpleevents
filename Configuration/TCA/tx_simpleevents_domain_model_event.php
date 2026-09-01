@@ -26,7 +26,7 @@ return [
             'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.title',
             'config'  => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 50,
                 'eval' => 'trim',
             ],
         ],
@@ -63,7 +63,7 @@ return [
             'label'   => 'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:event.url',
             'config'  => [
                 'type' => 'input',
-                'size' => 30,
+                'size' => 50,
                 'eval' => 'trim',
             ],
         ],
@@ -107,12 +107,27 @@ return [
     ],
     'types' => [
         '0' => [
-            'showitem' => 'title,categories,--palette--;;dates,description,audience,location,--palette--;;link,--palette--;;language',
+            'showitem' => '
+                    --palette--;;dates,
+                    title,
+                    description,
+                    --palette--;;details,
+                    --palette--;;link,
+                --div--;core.form.tabs:language,
+                    --palette--;;language,
+                --div--;core.form.tabs:categories,
+                    categories,
+            ',
         ],
     ],
     'palettes' => [
         'dates' => [
+            'label' => 'simpleevents.db:event.palettes.dates',
             'showitem' => 'eventstart,eventend',
+        ],
+        'details' => [
+            'label' => 'simpleevents.db:event.palettes.details',
+            'showitem' => 'location, audience',
         ],
         'language' => [
             'showitem' => '

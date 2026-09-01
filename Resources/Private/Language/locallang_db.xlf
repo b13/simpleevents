@@ -11,6 +11,12 @@
                 <source>Event</source>
                 <target>Event</target>
             </trans-unit>
+            <trans-unit id="event.palettes.dates">
+                <source>Date</source>
+            </trans-unit>
+            <trans-unit id="event.palettes.details">
+                <source>Details</source>
+            </trans-unit>
             <trans-unit id="event.palettes.link">
                 <source>Link</source>
             </trans-unit>

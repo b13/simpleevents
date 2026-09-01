@@ -4,18 +4,30 @@ use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 defined('TYPO3') or die();
 
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addTcaSelectItemGroup(
+    'tt_content',
+    'CType',
+    'simpleevents',
+    'simpleevents.db:tt_content.group.simpleevents',
+    'after:plugins'
+);
+
 ExtensionUtility::registerPlugin(
     'Simpleevents',
     'upcoming',
-    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.upcoming',
-    'actions-calendar'
+    'simpleevents.db:plugin.simpleevents_upcoming.title',
+    'actions-calendar',
+    'simpleevents',
+    'simpleevents.db:plugin.simpleevents_upcoming.description',
 );
 
 ExtensionUtility::registerPlugin(
     'Simpleevents',
     'list',
-    'LLL:EXT:simpleevents/Resources/Private/Language/locallang_db.xlf:plugin.list',
-    'actions-calendar'
+    'simpleevents.db:plugin.simpleevents_list.title',
+    'actions-calendar',
+    'simpleevents',
+    'simpleevents.db:plugin.simpleevents_list.description',
 );
 
 ExtensionUtility::registerPlugin(
@@ -23,7 +35,7 @@ ExtensionUtility::registerPlugin(
     'selectedList',
     'simpleevents.db:plugin.simpleevents_selectedlist.title',
     'actions-calendar',
-    'plugins',
+    'simpleevents',
     'simpleevents.db:plugin.simpleevents_selectedlist.description',
     'FILE:EXT:simpleevents/Configuration/FlexForms/SimpleEventsSelectedList.xml'
 );

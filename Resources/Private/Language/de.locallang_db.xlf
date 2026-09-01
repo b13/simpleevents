@@ -39,13 +39,21 @@
                 <source>Link</source>
                 <target>Weiterführende Informationen (Link zur Website)</target>
             </trans-unit>
-            <trans-unit id="plugin.list">
-                <source>Simple events: List all events</source>
-                <target>Simple events: Liste aller Veranstaltungen</target>
+
+            <!-- 'tt_content' -->
+            <trans-unit id="tt_content.group.simpleevents">
+                <source>Events</source>
+                <target>Veranstaltungen</target>
             </trans-unit>
-            <trans-unit id="plugin.upcoming">
-                <source>Simple events: Show upcoming events</source>
-                <target>Simple events: Nächste Veranstaltungen</target>
+
+            <!-- Plugin 'simpleevents_list' -->
+            <trans-unit id="plugin.simpleevents_list.title">
+                <source>Simple events: Event list</source>
+                <target>Simple events: Veranstaltungsliste</target>
+            </trans-unit>
+            <trans-unit id="plugin.simpleevents_list.description">
+                <source>Listing of all upcoming events, sorted by start date.</source>
+                <target>Auflistung aller kommenden Veranstaltungen, sortiert nach Startdatum.</target>
             </trans-unit>
 
             <!-- Plugin 'simpleevents_selectedlist' -->
@@ -54,12 +62,22 @@
                 <target>Simple events: Ausgewählte Veranstaltungen</target>
             </trans-unit>
             <trans-unit id="plugin.simpleevents_selectedlist.description">
-                <source>Display of selected events.</source>
-                <target>Darstellung von ausgewählten Veranstaltungen.</target>
+                <source>Listing of manually picked events, in the chosen order.</source>
+                <target>Auflistung manuell ausgewählter Veranstaltungen, in der gewählten Reihenfolge.</target>
             </trans-unit>
             <trans-unit id="plugin.simpleevents_selectedlist.flexform.settings.selectedEvents">
                 <source>Selected events</source>
                 <target>Ausgewählte Veranstaltungen</target>
+            </trans-unit>
+
+            <!-- Plugin 'simpleevents_upcoming' -->
+            <trans-unit id="plugin.simpleevents_upcoming.title">
+                <source>Simple events: Upcoming events</source>
+                <target>Simple events: Nächste Veranstaltungen</target>
+            </trans-unit>
+            <trans-unit id="plugin.simpleevents_upcoming.description">
+                <source>Listing of upcoming events, sorted by start date. This plugin shows a fixed number of events, three by default.</source>
+                <target>Auflistung kommender Veranstaltungen, sortiert nach Startdatum. Dieses Plugin zeigt eine fest eingestellte Anzahl, standardmäßig drei.</target>
             </trans-unit>
         </body>
     </file>

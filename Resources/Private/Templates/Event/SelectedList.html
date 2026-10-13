@@ -1,0 +1,7 @@
+<div id="event-container-{contentObjectData.uid}">
+    <ul>
+        <f:for each="{events}" as="event">
+            <f:render partial="Event" arguments="{event: event}" />
+        </f:for>
+    </ul>
+</div>

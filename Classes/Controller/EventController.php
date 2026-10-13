@@ -16,6 +16,7 @@ use B13\Simpleevents\Domain\Repository\EventRepository;
 use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Cache\CacheDataCollector;
 use TYPO3\CMS\Core\Cache\CacheTag;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 use TYPO3\CMS\Frontend\ContentObject\ContentObjectRenderer;
 
@@ -52,6 +53,23 @@ class EventController extends ActionController
         /** @var ContentObjectRenderer $contentObject */
         $contentObject = $this->request->getAttribute('currentContentObject');
         $this->view->assign('contentObjectData', $contentObject->data);
+        $this->addCacheTag();
+        return $this->htmlResponse();
+    }
+
+    /**
+     * Show selected events
+     */
+    public function selectedListAction(): ResponseInterface
+    {
+        $uids = GeneralUtility::intExplode(',', (string)($this->settings['selectedEvents'] ?? ''), true);
+        $events = $this->eventRepository->findByUids($uids);
+        /** @var ContentObjectRenderer|null $contentObject */
+        $contentObject = $this->request->getAttribute('currentContentObject');
+        $this->view->assignMultiple([
+            'events' => $events,
+            'contentObjectData' => $contentObject?->data,
+        ]);
         $this->addCacheTag();
         return $this->htmlResponse();
     }

@@ -7,45 +7,74 @@
             <authorEmail>typo3@b13.com</authorEmail>
         </header>
         <body>
+            <!-- 'tt_content' -->
+            <trans-unit id="tt_content.group.simpleevents">
+                <source>Events</source>
+            </trans-unit>
+
+            <!-- 'tx_simpleevents_domain_model_event' -->
             <trans-unit id="event">
                 <source>Event</source>
-                <target>Event</target>
             </trans-unit>
-            <trans-unit id="event.title">
-                <source>Title</source>
-                <target>Title</target>
+            <trans-unit id="event.palettes.dates">
+                <source>Date</source>
             </trans-unit>
-            <trans-unit id="event.description">
-                <source>Description</source>
-                <target>Description</target>a
+            <trans-unit id="event.palettes.details">
+                <source>Details</source>
             </trans-unit>
-            <trans-unit id="event.eventstart">
-                <source>Begin</source>
-                <target>Begin</target>
-            </trans-unit>
-            <trans-unit id="event.eventend">
-                <source>End (optional)</source>
-                <target>End (optional)</target>
-            </trans-unit>
-            <trans-unit id="event.location">
-                <source>Location</source>
-                <target>Location</target>
+            <trans-unit id="event.palettes.link">
+                <source>Link</source>
             </trans-unit>
             <trans-unit id="event.audience">
                 <source>Target audience</source>
-                <target>Target audience</target>
+            </trans-unit>
+            <trans-unit id="event.description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="event.eventend">
+                <source>End (optional)</source>
+            </trans-unit>
+            <trans-unit id="event.eventstart">
+                <source>Begin</source>
+            </trans-unit>
+            <trans-unit id="event.link_title">
+                <source>Link title</source>
+            </trans-unit>
+            <trans-unit id="event.location">
+                <source>Location</source>
+            </trans-unit>
+            <trans-unit id="event.title">
+                <source>Title</source>
             </trans-unit>
             <trans-unit id="event.url">
                 <source>Link</source>
-                <target>Link</target>
             </trans-unit>
-            <trans-unit id="plugin.list">
-                <source>Simple events: List all events</source>
-                <target>Simple events: List all events</target>
+
+            <!-- Plugin 'simpleevents_list' -->
+            <trans-unit id="plugin.simpleevents_list.title">
+                <source>Simple events: Event list</source>
             </trans-unit>
-            <trans-unit id="plugin.upcoming">
-                <source>Simple events: Show upcoming events</source>
-                <target>Simple events: Show upcoming events</target>
+            <trans-unit id="plugin.simpleevents_list.description">
+                <source>Listing of all upcoming events, sorted by start date.</source>
+            </trans-unit>
+
+            <!-- Plugin 'simpleevents_selectedlist' -->
+            <trans-unit id="plugin.simpleevents_selectedlist.title">
+                <source>Simple events: Selected events</source>
+            </trans-unit>
+            <trans-unit id="plugin.simpleevents_selectedlist.description">
+                <source>Listing of manually picked events, in the chosen order.</source>
+            </trans-unit>
+            <trans-unit id="plugin.simpleevents_selectedlist.flexform.settings.selectedEvents">
+                <source>Selected events</source>
+            </trans-unit>
+
+            <!-- Plugin 'simpleevents_upcoming' -->
+            <trans-unit id="plugin.simpleevents_upcoming.title">
+                <source>Simple events: Upcoming events</source>
+            </trans-unit>
+            <trans-unit id="plugin.simpleevents_upcoming.description">
+                <source>Listing of upcoming events, sorted by start date. This plugin shows a fixed number of events, three by default.</source>
             </trans-unit>
         </body>
     </file>

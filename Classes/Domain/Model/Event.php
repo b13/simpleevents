@@ -12,10 +12,7 @@ namespace B13\Simpleevents\Domain\Model;
  * of the License, or any later version.
  */
 
-use Doctrine\DBAL\ParameterType;
-use TYPO3\CMS\Core\Context\Context;
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Domain\Model\Category;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
@@ -71,57 +68,12 @@ class Event extends AbstractEntity
     protected $location;
 
     /**
-     * Categories
-     *
-     * @var \TYPO3\CMS\Extbase\Domain\Model\Category
+     * a single category, stored as a uid in the "categories" column
      */
-    protected $categories;
+    protected ?Category $categories = null;
 
-    /**
-     * Returns the categories
-     *
-     * @return \TYPO3\CMS\Extbase\Domain\Model\Category
-     */
-    public function getCategories()
+    public function getCategories(): ?Category
     {
-        $context = GeneralUtility::makeInstance(Context::class);
-        $languageId = $context->getPropertyFromAspect('language', 'id');
-
-        if ($languageId > 0) {
-            $uid = $this->uid;
-
-            $queryBuilder = GeneralUtility::makeInstance(ConnectionPool::class)
-                ->getQueryBuilderForTable('sys_category');
-
-            $stm = $queryBuilder->select('sys_category.*')
-                ->from('sys_category')
-                ->join(
-                    'sys_category',
-                    'sys_category_record_mm',
-                    'sys_category_record_mm',
-                    $queryBuilder->expr()->eq(
-                        'sys_category_record_mm.uid_local',
-                        $queryBuilder->quoteIdentifier('sys_category.uid')
-                    )
-                )
-                ->where(
-                    $queryBuilder->expr()->eq(
-                        'sys_category_record_mm.uid_foreign',
-                        $queryBuilder->createNamedParameter($uid, ParameterType::INTEGER)
-                    ),
-                    $queryBuilder->expr()->eq(
-                        'sys_category_record_mm.tablenames',
-                        $queryBuilder->createNamedParameter('tx_simpleevents_domain_model_event')
-                    ),
-                    $queryBuilder->expr()->eq(
-                        'sys_category_record_mm.fieldname',
-                        $queryBuilder->createNamedParameter('categories')
-                    )
-                );
-
-            $categories = $stm->executeQuery()->fetchAllAssociative();
-            return reset($categories);
-        }
         return $this->categories;
     }
 
